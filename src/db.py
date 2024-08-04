@@ -7,9 +7,9 @@ load_dotenv()
 db = MySQLDatabase(
     environ["DATABASE_NAME"],
     user=environ["DATABASE_USER"],
-    password=environ["DATABASE_EXAMPLE"],
+    password=environ["DATABASE_PASSWORD"],
     host=environ["DATABASE_HOST"],
-    port=environ["DATABASE_PORT"],
+    port=int(environ["DATABASE_PORT"]),
 )
 
 
@@ -26,4 +26,3 @@ class Url(Model):
 
 db.connect()
 db.create_tables([Url])
-db.close()

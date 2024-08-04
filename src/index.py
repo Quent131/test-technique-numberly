@@ -4,7 +4,6 @@ from utils import clear, shorten_url, expand_url, get_url_stats
 
 def main():
     while 1:
-        db.connect()
         functionnality = input(
             "Quelle fonctionnalité souhaitez-vous utiliser ?\n1. Raccourcir un URL\n2. Développer un URL\n3. Obtenir les stats d'un URL\n4. Quitter\n"
         )
@@ -30,7 +29,7 @@ def main():
             elif functionnality == 4:
                 break
             else:
-                raise ValueError()
+                print("Veuillez entrer un nombre entre 1 et 4.")
         except ValueError:
             clear()
             print("Veuillez entrer un nombre entre 1 et 4.")
