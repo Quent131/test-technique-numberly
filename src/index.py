@@ -19,13 +19,17 @@ def main():
             elif functionnality == 2:
                 url = input("Entrez l'URL à développer : ")
                 print(
-                    "L'URL raccourci {url} est associé à l'URL ${long_url}".format(
+                    "L'URL raccourci {url} est associé à l'URL {long_url}".format(
                         url=url, long_url=expand_url(url)
                     )
                 )
             elif functionnality == 3:
                 url = input("Entrez l'URL dont vous voulez obtenir les statistiques : ")
-                print(get_url_stats(url))
+                print(
+                    "L'URL {long_url} est associé à l'URL {short_url} et a été consulté {redirection_count} fois".format(
+                        **get_url_stats(url)
+                    )
+                )
             elif functionnality == 4:
                 break
             else:
